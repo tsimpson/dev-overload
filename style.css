@@ -137,13 +137,46 @@ nav {
     background: var(--pink);
 }
 
-/*=============== MEDIA QUERIES ============== */
-@media(max-width: 1000px) {
-    html {
-        font-size: 52%;
-    }
+/*=============== Headings/Paragraphs etc. ============== */
+h1, h2, h3 {
+    font-family: var(--font-stack);
+    font-weight: 400;
+    line-height: var(--line-height-small);
+    color: var(--white);
 }
 
+.heading-primary {
+    line-height: 1;
+    font-size: var(--font-size-huge);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--gutter-medium);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 10rem;
+    background: var(--pink);
+    margin: var(--gutter-small) 0;
+}
+
+h2 {
+    font-size: var(--font-size-medium-1);
+    margin-bottom: var(--gutter-small);
+}
+
+p {
+    margin: var(--gutter-small-1) 0;
+}
+
+
+
+/*=============== MEDIA QUERIES ============== */
 @media(max-width: 1340px) {
     .row {
         max-width: 1100px;
@@ -156,15 +189,25 @@ nav {
     }
 }
 
-@media(max-width: 600px) {
-    .row {
-        padding: 0 var(--gutter-normal);
+@media(max-width: 1000px) {
+    html {
+        font-size: 52%;
     }
 }
 
-@media(max-width: 300px) {
+@media(max-width: 900px) {
+    .heading-primary {
+        font-size: 6.5rem;
+    }
+
+    p {
+        max-width: var(--container-small-width);
+    }
+}
+
+@media(max-width: 600px) {
     .row {
-        padding: 0 var(--gutter-small);
+        padding: 0 var(--gutter-normal);
     }
 }
 
@@ -176,11 +219,25 @@ nav {
     .header_text p {
         transform: scale(.8);
     }
-}
 
-@media(max-width: 500px) {
     nav {
         justify-content: center;
+    }
+
+    .heading-primary {
+        font-size: var(--font-size-large);
+    }
+
+    h2 {
+        font-size: var(--font-size-medium-1);
+    }
+
+    h3 {
+        font-size: var(--font-size-medium);
+    }
+
+    p {
+        margin: var(--gutter-small-1) 0;
     }
 }
 
@@ -191,7 +248,11 @@ nav {
 }
 
 @media(max-width: 300px) {
+    .row {
+        padding: 0 var(--gutter-small);
+    }    
+
     nav {
         font-size: var(--font-size-small);
-    }
-}
+    }    
+}    
